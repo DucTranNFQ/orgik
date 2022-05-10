@@ -53,7 +53,15 @@
 @media (min-width: 1400px) {
     .container {
         &, &-sm, &md, &-lg, &-xl, &-lg {
-            max-width: 1650px;
+            max-width: 1320px;
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        &, &-sm, &md, &-lg, &-xl, &-lg {
+            max-width: 1500px;
         }
     }
 }

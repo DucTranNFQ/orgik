@@ -83,7 +83,6 @@ body {
   font-weight: 400;
   background-color: #ffffff;
   color: #1a1a1a;
-  height: 2000px;
 }
 
 .text-center {
@@ -417,7 +416,12 @@ body {
 }
 @media (min-width: 1400px) {
   .container, .container-sm, .containermd, .container-lg, .container-xl, .container-lg {
-    max-width: 1650px;
+    max-width: 1320px;
+  }
+}
+@media (min-width: 1600px) {
+  .container, .container-sm, .containermd, .container-lg, .container-xl, .container-lg {
+    max-width: 1500px;
   }
 }
 .row {
@@ -561,13 +565,78 @@ body {
   color: #451d1d;
 }
 
-#slider {
-  height: 100px;
-}
-#slider .slider-wrapper {
+#slider .slider-banner {
+  width: 100%;
+  height: 85vh;
   background-image: url("../images/slideshow-banner.webp");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+}
+#slider .slider-content {
+  position: absolute;
+  left: 250px;
+}
+#slider .slider-content .slide-1 .slide-sub-heading {
+  color: #636363;
+  font-size: 28px;
+}
+#slider .slider-content .slide-1 .slide-heading {
+  font-size: 36px;
+  font-weight: 400;
+  color: #5da88a;
+}
+#slider .slider-content .slide-1 .slide-text {
+  font-size: 40px;
+  font-weight: 300;
+}
+#slider .slider-content .slide-1 .mutiple-buttons {
+  margin-top: 30px;
+}
+#slider .slider-content .slide-1 .mutiple-buttons .slide-button {
+  text-decoration: none;
+  background-color: #5da88a;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 50px;
+}
+#slider .slider-content .slide-1 .mutiple-buttons .slide-button:hover {
+  background-color: #fee4d7;
+}
+
+#support .support-wrapper {
+  padding: 50px 0;
+}
+#support .support-wrapper .support-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+#support .support-wrapper .support-card .card-image {
+  width: 150px;
+  height: 150px;
+  border: 1px dashed #5da88a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#support .support-wrapper .support-card .card-badge {
+  width: 50px;
+  height: 50px;
+  background-color: #5da88a;
+  border-radius: 50%;
+  color: white;
+  line-height: 50px;
+}
+#support .support-wrapper .support-card .card-heading {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 400;
+}
+#support .support-wrapper .support-card .card-text {
+  color: #1a1a1a;
 }
 
 /*# sourceMappingURL=style.css.map */
