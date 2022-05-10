@@ -1,3 +1,573 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  height: 2000px;
+}
+
+.text-center {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.text-primary {
+  color: #5da88a;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.me-1 {
+  margin-right: 0.25rem;
+}
+
+.ms-1 {
+  margin-left: 0.25rem;
+}
+
+.mx-1 {
+  margin: 0 0.25rem;
+}
+
+.my-1 {
+  margin: 0.25rem 0;
+}
+
+.me-n1 {
+  margin-right: -0.25rem;
+}
+
+.ms-n1 {
+  margin-left: -0.25rem;
+}
+
+.mx-n1 {
+  margin: -0.25rem;
+}
+
+.my-n1 {
+  margin: -0.25rem 0;
+}
+
+.pe-1 {
+  margin-right: 0.25rem;
+}
+
+.ps-1 {
+  margin-left: 0.25rem;
+}
+
+.px-1 {
+  margin: 0 0.25rem;
+}
+
+.py-1 {
+  margin: 0.25rem 0;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.ms-2 {
+  margin-left: 0.5rem;
+}
+
+.mx-2 {
+  margin: 0 0.5rem;
+}
+
+.my-2 {
+  margin: 0.5rem 0;
+}
+
+.me-n2 {
+  margin-right: -0.5rem;
+}
+
+.ms-n2 {
+  margin-left: -0.5rem;
+}
+
+.mx-n2 {
+  margin: -0.5rem;
+}
+
+.my-n2 {
+  margin: -0.5rem 0;
+}
+
+.pe-2 {
+  margin-right: 0.5rem;
+}
+
+.ps-2 {
+  margin-left: 0.5rem;
+}
+
+.px-2 {
+  margin: 0 0.5rem;
+}
+
+.py-2 {
+  margin: 0.5rem 0;
+}
+
+.me-3 {
+  margin-right: 1rem;
+}
+
+.ms-3 {
+  margin-left: 1rem;
+}
+
+.mx-3 {
+  margin: 0 1rem;
+}
+
+.my-3 {
+  margin: 1rem 0;
+}
+
+.me-n3 {
+  margin-right: -1rem;
+}
+
+.ms-n3 {
+  margin-left: -1rem;
+}
+
+.mx-n3 {
+  margin: -1rem;
+}
+
+.my-n3 {
+  margin: -1rem 0;
+}
+
+.pe-3 {
+  margin-right: 1rem;
+}
+
+.ps-3 {
+  margin-left: 1rem;
+}
+
+.px-3 {
+  margin: 0 1rem;
+}
+
+.py-3 {
+  margin: 1rem 0;
+}
+
+.me-4 {
+  margin-right: 1.5rem;
+}
+
+.ms-4 {
+  margin-left: 1.5rem;
+}
+
+.mx-4 {
+  margin: 0 1.5rem;
+}
+
+.my-4 {
+  margin: 1.5rem 0;
+}
+
+.me-n4 {
+  margin-right: -1.5rem;
+}
+
+.ms-n4 {
+  margin-left: -1.5rem;
+}
+
+.mx-n4 {
+  margin: -1.5rem;
+}
+
+.my-n4 {
+  margin: -1.5rem 0;
+}
+
+.pe-4 {
+  margin-right: 1.5rem;
+}
+
+.ps-4 {
+  margin-left: 1.5rem;
+}
+
+.px-4 {
+  margin: 0 1.5rem;
+}
+
+.py-4 {
+  margin: 1.5rem 0;
+}
+
+.me-5 {
+  margin-right: 3rem;
+}
+
+.ms-5 {
+  margin-left: 3rem;
+}
+
+.mx-5 {
+  margin: 0 3rem;
+}
+
+.my-5 {
+  margin: 3rem 0;
+}
+
+.me-n5 {
+  margin-right: -3rem;
+}
+
+.ms-n5 {
+  margin-left: -3rem;
+}
+
+.mx-n5 {
+  margin: -3rem;
+}
+
+.my-n5 {
+  margin: -3rem 0;
+}
+
+.pe-5 {
+  margin-right: 3rem;
+}
+
+.ps-5 {
+  margin-left: 3rem;
+}
+
+.px-5 {
+  margin: 0 3rem;
+}
+
+.py-5 {
+  margin: 3rem 0;
+}
+
+.wrapper {
+  margin: 0 5%;
+}
+
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container, .container-sm, .containermd {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container, .container-sm, .containermd, .container-lg {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container, .container-sm, .containermd, .container-lg, .container-xl {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container, .container-sm, .containermd, .container-lg, .container-xl, .container-lg {
+    max-width: 1650px;
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-3 {
+  width: 25%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-6 {
+  width: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-9 {
+  width: 75%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-12 {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#header {
+  position: relative;
+  z-index: 4;
+}
+
+.header-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.header-section .header-menu {
+  list-style-type: none;
+}
+.header-section .header-menu .header-menu-item-link {
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  padding: 15px 14px;
+  color: #1a1a1a;
+}
+.header-section .header-menu .header-menu-item-link:hover {
+  color: #5da88a;
+}
+.header-section .header-menu .fa-solid.fa-angle-down {
+  font-size: 0.5rem;
+}
+.header-section .header-icon {
+  font-size: 1.8rem;
+}
+.header-section .header-with-search .header-search {
+  border: 2px solid #e2e2e2;
+  border-radius: 50px;
+  background-color: rgba(93, 168, 138, 0.1);
+  opacity: 0.7;
+}
+.header-section .header-with-search .header-search #searchInput {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 8px 32px;
+}
+.header-section .header-with-search .header-search #searchInput::placeholder {
+  color: #5da88a;
+}
+.header-section .header-with-search .header-search .search-button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+}
+.header-section .header-with-search .header-search .search-button:hover {
+  background-color: #5da88a;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.header-section .header-with-search .header-search .search-button:hover > i {
+  color: white;
+}
+.header-section .header-with-search .header-link:hover > i {
+  color: #451d1d;
+}
+
+#slider {
+  height: 100px;
+}
+#slider .slider-wrapper {
+  background-image: url("../images/slideshow-banner.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /*# sourceMappingURL=style.css.map */

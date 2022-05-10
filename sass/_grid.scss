@@ -1,0 +1,74 @@
+@use "sass:math";
+
+.wrapper {
+    margin: 0 5%;
+}
+
+.container {
+    &, &-fluid, &-sm, &-md, &-lg, &-xl, &-xxl {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $spacer;
+        padding-right: $spacer;
+    }
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+@media (min-width: 576px) {
+    .container {
+        &, &-sm {
+            max-width: 540px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        &, &-sm, &md {
+            max-width: 720px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        &, &-sm, &md, &-lg {
+            max-width: 960px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        &, &-sm, &md, &-lg, &-xl {
+            max-width: 1140px;
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        &, &-sm, &md, &-lg, &-xl, &-lg {
+            max-width: 1650px;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$spacer;
+    margin-right: -$spacer;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} { 
+        width: math.div(100%, 12) * $i;
+        padding-left: $spacer;
+        padding-right: $spacer;
+    }
+}

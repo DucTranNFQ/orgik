@@ -1,0 +1,103 @@
+@use "sass:map";
+
+body {
+    font-family: $font-body;
+    font-weight: 400;
+    background-color: $bg-body;
+    color: $body-text;
+    height: 2000px;
+}
+
+.text-center {
+    text-align: center!important;
+    justify-content: center!important;
+}
+
+.text-primary {
+    color: $primary-color;
+}
+
+.d-flex {
+    display: flex!important;
+}
+
+.d-block {
+    display: block!important;
+}
+
+.d-inline-block {
+    display: inline-block!important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1!important;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+.justify-content-start {
+    justify-content: flex-start!important;
+}
+
+.justify-content-center {
+    justify-content: center!important;
+}
+
+.justify-content-end {
+    justify-content: flex-end!important;
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+
+.align-items-start {
+    align-items: flex-start!important;
+}
+
+.align-items-end {
+    align-items: flex-end!important;
+}
+
+@for $i from 1 through 5 {
+    .me-#{$i} {
+        margin-right: map.get($spacers, $i);
+    }
+    .ms-#{$i} {
+        margin-left: map.get($spacers, $i);
+    }
+    .mx-#{$i} {
+        margin: 0 map.get($spacers, $i);
+    }
+    .my-#{$i} {
+        margin: map.get($spacers, $i) 0;
+    }
+    .me-n#{$i} {
+        margin-right: - map.get($spacers, $i);
+    }
+    .ms-n#{$i} {
+        margin-left: - map.get($spacers, $i);
+    }
+    .mx-n#{$i} {
+        margin: 0 - map.get($spacers, $i);
+    }
+    .my-n#{$i} {
+        margin: - map.get($spacers, $i) 0;
+    }
+    .pe-#{$i} {
+        margin-right: map.get($spacers, $i);
+    }
+    .ps-#{$i} {
+        margin-left: map.get($spacers, $i);
+    }
+    .px-#{$i} {
+        margin: 0 map.get($spacers, $i);
+    }
+    .py-#{$i} {
+        margin: map.get($spacers, $i) 0;
+    }
+}
+
+

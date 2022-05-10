@@ -1,0 +1,85 @@
+
+#header {
+    position: relative;
+    z-index: 4;
+}
+
+.header-section {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+
+    .header-menu {
+        list-style-type: none;
+        
+        .header-menu-item-link {
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            padding: 15px 14px;        
+            color: $body-text;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .fa-solid.fa-angle-down {
+            font-size: 0.5rem;
+        }
+    }
+
+    .header-icon {
+        font-size: 1.8rem;
+    }
+
+    .header-with-search {
+        
+        .header-search {
+            border: 2px solid #e2e2e2;
+            border-radius: 50px;
+            background-color: rgba(93, 168, 138, 0.1);
+            opacity: 0.7;
+    
+            #searchInput {
+                outline: none;
+                border: none;
+                background-color: transparent;
+                padding: 8px 32px;
+                &::placeholder {
+                    color: $primary-color;
+                }
+            }
+    
+            .search-button {
+                outline: none;
+                border: none;
+                background-color: transparent;
+                width: 36px;
+                height: 36px;
+                &:hover {
+                    background-color: $primary-color;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    &>i {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .header-link:hover>i {
+            color: #451d1d;
+        }
+    }
+}
+
+#slider {
+    height: 100px;
+
+    .slider-wrapper {
+        background-image: url("../images/slideshow-banner.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

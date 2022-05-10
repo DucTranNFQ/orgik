@@ -5,9 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orgik Shopify</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/98b8be3974.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 <body>
-    <h1 class="text-red">hello world</h1>
-</body>
+    <header id="header">
+        <section class="header-section">
+            <nav class="d-flex align-items-center w-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 d-flex align-items-center">
+                            <ul class="header-menu d-flex">
+                                <li class="header-menu-item">
+                                    <a href="#" class="header-menu-item-link">
+                                        HOME
+                                    </a>
+                                </li>
+                                <li class="header-menu-item">
+                                    <a href="#" class="header-menu-item-link">
+                                        SHOP
+                                        <i class="fa-solid fa-angle-down"></i>
+                                    </a>
+                                </li>
+                                <li class="header-menu-item">
+                                    <a href="#" class="header-menu-item-link">
+                                        PAGES
+                                        <i class="fa-solid fa-angle-down"></i>
+                                    </a>
+                                </li>
+                                <li class="header-menu-item">
+                                    <a href="#" class="header-menu-item-link">
+                                        CART
+                                    </a>
+                                </li>
+                                <li class="header-menu-item">
+                                    <a href="#" class="header-menu-item-link">
+                                        CONTACT 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4 text-center">
+                            <div class="header-logo d-inline-block">
+                                <a href="#">
+                                    <img src="./images/header-logo.webp" alt="Orgik" style="max-width: 140px;">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-4 d-flex align-items-center justify-content-end header-with-search">
+                            <div class="header-search">
+                                <form action="/search" method="get">
+                                    <input type="search" name="q" id="searchInput" placeholder="Enter your keywords">
+                                    <button type="submit" class="search-button">
+                                        <i class="fa-solid fa-magnifying-glass text-primary" style="font-size: 0.8rem;"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="header-cart">
+                                <a href="#" class="header-link">
+                                    <i class="fa-solid fa-bag-shopping header-icon ms-3 text-primary"></i>
+                                </a>
+                            </div>
+                            <div class="header-user">
+                                <a href="#" class="header-link">
+                                    <i class="fa-regular fa-user header-icon ms-5 text-primary"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <section id="slider">
+        <div class="container">
+            <div class="row">
+                <div class="slider-wrapper">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 </html>
