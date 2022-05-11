@@ -99,4 +99,15 @@ body {
     }
 }
 
+.rounded {
+    border-radius: 2px;
+
+    &-pill {
+        border-radius: 50px!important;
+    }
+
+    &-circle {
+        border-radius: 50%!important;
+    }
+}
 

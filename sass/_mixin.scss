@@ -1,0 +1,39 @@
+@use "sass:map";
+@mixin media-query($breakpoint) {
+    @if $breakpoint == "sm" {
+        @media screen and (min-width: map.get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "md" {
+        @media screen and (min-width: map.get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "lg" {
+        @media screen and (min-width: map.get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "xl" {
+        @media screen and (min-width: map.get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "xxl" {
+        @media screen and (min-width: map.get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+.test-media-query {
+    @include media-query(200px) {
+        background-color: red;
+    }
+}

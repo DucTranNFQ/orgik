@@ -1,66 +1,119 @@
 @use "sass:math";
+@use "sass:map";
 
 .wrapper {
     margin: 0 5%;
 }
 
-.container {
-    &, &-fluid, &-sm, &-md, &-lg, &-xl, &-xxl {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: $spacer;
-        padding-right: $spacer;
+@media (min-width: 1px) {
+    .container {
+        &, &-fluid, &-sm, &-md, &-lg, &-xl, &-xxl {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
+    }
+    
+    .container-fluid {
+        max-width: 100%!important;
+        padding: 0;
+        margin: 0;
+    }
+
+    @for $i from 1 through 12 {
+        .col-#{$i} { 
+            width: math.div(100%, 12) * $i;
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
     }
 }
 
-.container-fluid {
-    padding: 0;
-}
-
-@media (min-width: 576px) {
+@media (min-width: map.get($grid-breakpoints, "sm")) {
     .container {
         &, &-sm {
             max-width: 540px;
         }
     }
+
+    @for $i from 1 through 12 {
+        .col-sm-#{$i} { 
+            width: math.div(100%, 12) * $i;
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: map.get($grid-breakpoints, "md")) {
     .container {
         &, &-sm, &md {
             max-width: 720px;
         }
     }
+
+    @for $i from 1 through 12 {
+        .col-md-#{$i} { 
+            width: math.div(100%, 12) * $i;
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
+    }
 }
 
-@media (min-width: 992px) {
+@media (min-width: map.get($grid-breakpoints, "lg")) {
     .container {
         &, &-sm, &md, &-lg {
             max-width: 960px;
         }
     }
+
+    @for $i from 1 through 12 {
+        .col-lg-#{$i} { 
+            width: math.div(100%, 12) * $i;
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
+    }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: map.get($grid-breakpoints, "xl")) {
     .container {
         &, &-sm, &md, &-lg, &-xl {
             max-width: 1140px;
         }
     }
+
+    @for $i from 1 through 12 {
+        .col-xl-#{$i} { 
+            width: math.div(100%, 12) * $i;
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
+    }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: map.get($grid-breakpoints, "xxl")) {
     .container {
-        &, &-sm, &md, &-lg, &-xl, &-lg {
+        &, &-sm, &md, &-lg, &-xl, &-xxl {
             max-width: 1320px;
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .col-xxl-#{$i} { 
+            width: math.div(100%, 12) * $i;
+            padding-left: $spacer;
+            padding-right: $spacer;
         }
     }
 }
 
 @media (min-width: 1600px) {
     .container {
-        &, &-sm, &md, &-lg, &-xl, &-lg {
+        &, &-sm, &md, &-lg, &-xl, &-xxl {
             max-width: 1500px;
         }
     }
@@ -73,10 +126,3 @@
     margin-right: -$spacer;
 }
 
-@for $i from 1 through 12 {
-    .col-#{$i} { 
-        width: math.div(100%, 12) * $i;
-        padding-left: $spacer;
-        padding-right: $spacer;
-    }
-}
