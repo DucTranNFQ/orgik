@@ -5,6 +5,7 @@ body {
     font-weight: 400;
     background-color: $bg-body;
     color: $body-text;
+    height: 2000px;
 }
 
 .text-center {
@@ -13,20 +14,161 @@ body {
 }
 
 .text-primary {
-    color: $primary-color;
+    color: $primary-color!important;
 }
 
-.d-flex {
-    display: flex!important;
+.text-body {
+    color: $body-color!important;
 }
 
-.d-block {
-    display: block!important;
+.d {
+    @each $key, $value in $grid-breakpoints {
+        @if $key == "xs" {
+            &-flex {
+                @include media-query($key) {
+                    display: flex!important;
+                }
+            }
+
+            &-block {
+                @include media-query($key) {
+                    display: block!important;
+                }
+            }
+
+            &-inline-block {
+                @include media-query($key) {
+                    display: inline-block!important;
+                }
+            }
+
+            &-inline {
+                @include media-query($key) {
+                    display: inline!important;
+                }
+            }
+
+            &-none {
+                @include media-query($key) {
+                    display: none!important;
+                }
+            }
+        }
+        @else {
+            &-#{$key}-flex {
+                @include media-query($key) {
+                    display: flex!important;
+                }
+            }
+    
+            &-#{$key}-block {
+                @include media-query($key) {
+                    display: block!important;
+                }
+            }
+    
+            &-#{$key}-inline-block {
+                @include media-query($key) {
+                    display: inline-block!important;
+                }
+            }
+    
+            &-#{$key}-inline {
+                @include media-query($key) {
+                    display: inline!important;
+                }
+            }
+
+            &-#{$key}-none {
+                @include media-query($key) {
+                    display: none!important;
+                }
+            }
+        }
+    }
 }
 
-.d-inline-block {
-    display: inline-block!important;
+.justify-content {
+    @each $key, $value in $grid-breakpoints {
+        @if $key == "xs" {
+            &-start {
+                @include media-query($key) {
+                    justify-content: flex-start!important;
+                }
+            }
+
+            &-end {
+                @include media-query($key) {
+                    justify-content: flex-end!important;
+                }
+            }
+
+            &-center {
+                @include media-query($key) {
+                    justify-content: center!important;
+                }
+            }
+
+            &-between {
+                @include media-query($key) {
+                    justify-content: space-between!important;
+                }
+            }
+
+            &-around {
+                @include media-query($key) {
+                    justify-content: space-around!important;
+                }
+            }
+
+            &-evenly {
+                @include media-query($key) {
+                    justify-content: space-evenly!important;
+                }
+            }
+        }
+        @else {
+
+            &-#{$key}-start {
+                @include media-query($key) {
+                    justify-content: flex-start!important;
+                }
+            }
+    
+            &-#{$key}-end {
+                @include media-query($key) {
+                    justify-content: flex-end!important;
+                }
+            }
+    
+            &-#{$key}-center {
+                @include media-query($key) {
+                    justify-content: center!important;
+                }
+            }
+    
+            &-#{$key}-between {
+                @include media-query($key) {
+                    justify-content: space-between!important;
+                }
+            }
+    
+            &-#{$key}-around {
+                @include media-query($key) {
+                    justify-content: space-around!important;
+                }
+            }
+    
+            &-#{$key}-evenly {
+                @include media-query($key) {
+                    justify-content: space-evenly!important;
+                }
+            }
+
+        }
+    }
 }
+
 
 .flex-grow-1 {
     flex-grow: 1!important;
@@ -34,18 +176,6 @@ body {
 
 .w-100 {
     width: 100%!important;
-}
-
-.justify-content-start {
-    justify-content: flex-start!important;
-}
-
-.justify-content-center {
-    justify-content: center!important;
-}
-
-.justify-content-end {
-    justify-content: flex-end!important;
 }
 
 .align-items-center {
@@ -60,47 +190,94 @@ body {
     align-items: flex-end!important;
 }
 
-@for $i from 1 through 5 {
-    .me-#{$i} {
-        margin-right: map.get($spacers, $i);
+.m {
+    @each $key, $value in $grid-breakpoints {
+        @for $i from 1 through 5 {
+            @if $key == "xs" {
+                &-#{$i} {
+                    margin: map.get($spacers, $i)!important;
+                }
+                &x-#{$i} {
+                    margin: 0 map.get($spacers, $i)!important;
+                }
+                &y-#{$i} {
+                    margin: map.get($spacers, $i) 0!important;
+                }
+                &s-#{$i} {
+                    margin-left: map.get($spacers, $i)!important;
+                }
+                &e-#{$i} {
+                    margin-right: map.get($spacers, $i)!important;
+                }
+            }
+            @else {
+                @include media-query($key) {
+                    &-#{$key}-#{$i} {
+                        margin: map.get($spacers, $i)!important;
+                    }
+                    &x-#{$key}-#{$i} {
+                        margin: 0 map.get($spacers, $i)!important;
+                    }
+                    &y-#{$key}-#{$i} {
+                        margin: map.get($spacers, $i) 0!important;
+                    }
+                    &s-#{$key}-#{$i} {
+                        margin-left: map.get($spacers, $i)!important;
+                    }
+                    &e-#{$key}-#{$i} {
+                        margin-right: map.get($spacers, $i)!important;
+                    }
+                }
+            }
+        }
     }
-    .ms-#{$i} {
-        margin-left: map.get($spacers, $i);
-    }
-    .mx-#{$i} {
-        margin: 0 map.get($spacers, $i);
-    }
-    .my-#{$i} {
-        margin: map.get($spacers, $i) 0;
-    }
-    .me-n#{$i} {
-        margin-right: - map.get($spacers, $i);
-    }
-    .ms-n#{$i} {
-        margin-left: - map.get($spacers, $i);
-    }
-    .mx-n#{$i} {
-        margin: 0 - map.get($spacers, $i);
-    }
-    .my-n#{$i} {
-        margin: - map.get($spacers, $i) 0;
-    }
-    .pe-#{$i} {
-        margin-right: map.get($spacers, $i);
-    }
-    .ps-#{$i} {
-        margin-left: map.get($spacers, $i);
-    }
-    .px-#{$i} {
-        margin: 0 map.get($spacers, $i);
-    }
-    .py-#{$i} {
-        margin: map.get($spacers, $i) 0;
+}
+
+.p {
+    @each $key, $value in $grid-breakpoints {
+        @for $i from 1 through 5 {
+            @if $key == "xs" {
+                &-#{$i} {
+                    padding: map.get($spacers, $i)!important;
+                }
+                &x-#{$i} {
+                    padding: 0 map.get($spacers, $i)!important;
+                }
+                &y-#{$i} {
+                    padding: map.get($spacers, $i) 0!important;
+                }
+                &s-#{$i} {
+                    padding-left: map.get($spacers, $i)!important;
+                }
+                &e-#{$i} {
+                    padding-right: map.get($spacers, $i)!important;
+                }
+            }
+            @else {
+                @include media-query($key) {
+                    &-#{$key}-#{$i} {
+                        padding: map.get($spacers, $i)!important;
+                    }
+                    &x-#{$key}-#{$i} {
+                        padding: 0 map.get($spacers, $i)!important;
+                    }
+                    &y-#{$key}-#{$i} {
+                        padding: map.get($spacers, $i) 0!important;
+                    }
+                    &s-#{$key}-#{$i} {
+                        padding-left: map.get($spacers, $i)!important;
+                    }
+                    &e-#{$key}-#{$i} {
+                        padding-right: map.get($spacers, $i)!important;
+                    }
+                }
+            }
+        }
     }
 }
 
 .rounded {
-    border-radius: 2px;
+    border-radius: 2px!important;
 
     &-pill {
         border-radius: 50px!important;

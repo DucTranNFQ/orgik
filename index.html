@@ -15,14 +15,15 @@
     <body>
         <header id="header">
             <section class="header-section">
-                <nav class="d-flex align-items-center w-100">
+                <nav class="d-flex align-items-center w-100 px-4">
                     <div class="container container-fluid">
-                        <div class="row">
-                            <div class="col-4 d-flex align-items-center">
+                        <div class="row justify-content-between">
+                            <div class="col-xxl-4 d-flex align-items-center">
                                 <button class="header-menu-btn">
                                     <i class="fa-solid fa-align-justify"></i>
+                                    <span class="text-body">Menu</span>
                                 </button>
-                                <ul class="header-menu d-flex">
+                                <ul class="header-menu d-xxl-flex">
                                     <li class="header-menu-item">
                                         <a href="#" class="header-menu-item-link">
                                             HOME
@@ -53,7 +54,7 @@
                                 </ul>
                             </div>
 
-                            <div class="col-4 text-center">
+                            <div class="col-xxl-4 text-center">
                                 <div class="header-logo d-inline-block">
                                     <a href="#">
                                         <img src="./images/header-logo.webp" alt="Orgik" style="max-width: 140px;">
@@ -61,12 +62,12 @@
                                 </div>
                             </div>
 
-                            <div class="col-4 d-flex align-items-center justify-content-end header-with-search">
+                            <div class="col-xxl-4 d-flex align-items-center justify-content-end header-with-search">
                                 <div class="header-search">
                                     <form action="/search" method="get">
                                         <input type="search" name="q" id="searchInput" placeholder="Enter your keywords">
                                         <button type="submit" class="search-button">
-                                            <i class="fa-solid fa-magnifying-glass text-primary" style="font-size: 0.8rem;"></i>
+                                            <i class="fa-solid fa-magnifying-glass header-icon text-primary"></i>
                                         </button>
                                     </form>
                                 </div>
@@ -87,15 +88,16 @@
             </section>
         </header>
 
-        <!-- <section id="slider">
+        <section id="slider">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="slider-banner d-flex align-items-center">
-                        <div class="slider-content">
-                            <picture>
-                                <source media="(min-width:768px)" srcset="images/slideshow-banner.webp">
-                                <img src="./images/slideshow-banner-mobile-only.webp" alt="banner" style="width:auto;">
-                            </picture>
+                    <div class="slider-banner d-flex align-items-center justify-content-center">
+                        <picture>
+                            <source media="(min-width:768px)" srcset="images/slideshow-banner.webp">
+                            <img src="./images/slideshow-banner-mobile-only.webp" alt="banner" style="width:auto;">
+                        </picture>
+                        <div class="slider-background"></div>
+                        <div class="slider-content text-center">
                             <div class="slide-1">
                                 <p class="slide-sub-heading">
                                     Fresh & Organically Grown
@@ -117,7 +119,7 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         
 

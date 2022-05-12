@@ -1,21 +1,21 @@
-
+@use "sass:map";
 #header {
     position: relative;
     z-index: 4;
+}
+
+.header-sticky {
+    position: sticky;
+    bottom: 0;
 }
 
 .header-section {
     padding-top: 15px;
     padding-bottom: 15px;
 
-    .container.container-fluid {
-        @include media-query(1px) {
-            margin: 0 5%;
-        }
-    }
-
     .header-menu {
         list-style-type: none;
+        display: none;
 
         &-btn {
             outline: none;
@@ -30,7 +30,7 @@
             }
         }
         
-        &-link {
+        &-item-link {
             text-decoration: none;
             font-size: 1rem;
             display: block;
@@ -50,12 +50,17 @@
     .header-with-search {
         
         .header-search {
-            border: 2px solid #e2e2e2;
-            border-radius: 50px;
-            background-color: rgba(93, 168, 138, 0.1);
-            opacity: 0.7;
-    
+            @include media-query("xxl") {
+                border: 2px solid #e2e2e2;
+                border-radius: 50px;
+                background-color: rgba(93, 168, 138, 0.1);
+                opacity: 0.7;
+            }
+            
             #searchInput {
+                @include media-query("xxl") {
+                    display: unset;
+                }
                 outline: none;
                 border: none;
                 background-color: transparent;
@@ -63,9 +68,11 @@
                 &::placeholder {
                     color: $primary-color;
                 }
+                display: none;
             }
     
             .search-button {
+
                 outline: none;
                 border: none;
                 background-color: transparent;
@@ -87,7 +94,7 @@
         }
 
         .header-icon {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
     }
 }
@@ -95,25 +102,51 @@
 #slider {
     .slider-banner {
         width: 100%;
+        position: relative;
+    }
+
+    .slider-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: rgba(248, 240, 229, 0.85);
+        background: rgba(248, 240, 229, 0.85);
+        @include media-query("md") {
+            background-color: unset;
+            background: unset;
+        }
     }
 
     .slider-content {
+        position: absolute;
+        @include media-query("sm") {
+            left: 5%;        
+        }
 
         .slide-1 {
 
             .slide-sub-heading {
                 color: #636363;
-                font-size: 28px;
+                font-size: 21px;   
+
+                @include media-query("sm") {
+                }
             }   
 
             .slide-heading {
-                font-size: 36px;
                 font-weight: 400;
                 color: $primary-color;
+                font-size: 30px;       
+
+                @include media-query("sm") {
+                }
             }
 
             .slide-text {
-                font-size: 40px;
+                font-size: 16px;
                 font-weight: 300;
             }
 
