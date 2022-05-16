@@ -1,4 +1,5 @@
 @use "sass:map";
+
 #header {
     position: relative;
     z-index: 4;
@@ -12,17 +13,24 @@
 .header-section {
     padding-top: 15px;
     padding-bottom: 15px;
+    
+    @include media-query("md") {
+        margin: 0 30px;
+    }
 
     .header-menu {
         list-style-type: none;
         display: none;
+
+        .active {
+            color: $primary-color;
+        }
 
         &-btn {
             outline: none;
             border: none;
             background-color: transparent;
             font-size: 1.2rem;
-            color: $primary-color;
             cursor: pointer;
 
             @include media-query("xxl") {
@@ -78,12 +86,21 @@
                 background-color: transparent;
                 width: 36px;
                 height: 36px;
+                
+                &-icon {
+                    @include media-query("xl") { 
+                        font-size: 1rem;
+                    }
+                }
+
                 &:hover {
-                    background-color: $primary-color;
-                    border-radius: 50px;
-                    cursor: pointer;
-                    &>i {
-                        color: white;
+                    @include media-query("xl") {
+                        background-color: $primary-color;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        &>i {
+                            color: white!important;
+                        }
                     }
                 }
             }
@@ -94,6 +111,7 @@
         }
 
         .header-icon {
+            color: $primary-color;
             font-size: 1.4rem;
         }
     }
@@ -103,6 +121,19 @@
     .slider-banner {
         width: 100%;
         position: relative;
+        height: 540px;
+        overflow: hidden;
+        @include media-query("md") {
+            height: 500px;
+            overflow: unset;
+            margin: 0 30px;
+        }
+
+        @include media-query("xl") {
+            height: unset;
+            overflow: unset;
+            margin: 0 30px;
+        }
     }
 
     .slider-background {
@@ -126,13 +157,18 @@
             left: 5%;        
         }
 
+        @include media-query("sm") {
+            left: 160px;        
+        }
+
         .slide-1 {
 
             .slide-sub-heading {
                 color: #636363;
                 font-size: 21px;   
 
-                @include media-query("sm") {
+                @include media-query("lg") {
+                    font-size: 28px;
                 }
             }   
 
@@ -141,13 +177,17 @@
                 color: $primary-color;
                 font-size: 30px;       
 
-                @include media-query("sm") {
+                @include media-query("lg") {
+                    font-size: 36px
                 }
             }
 
             .slide-text {
                 font-size: 16px;
                 font-weight: 300;
+                @include media-query("lg") {
+                    font-size: 40px
+                }
             }
 
             .mutiple-buttons {

@@ -15,7 +15,7 @@
     <body>
         <header id="header">
             <section class="header-section">
-                <nav class="d-flex align-items-center w-100 px-4">
+                <nav class="d-flex align-items-center">
                     <div class="container container-fluid">
                         <div class="row justify-content-between">
                             <div class="col-xxl-4 d-flex align-items-center">
@@ -25,7 +25,7 @@
                                 </button>
                                 <ul class="header-menu d-xxl-flex">
                                     <li class="header-menu-item">
-                                        <a href="#" class="header-menu-item-link">
+                                        <a href="#" class="header-menu-item-link active">
                                             HOME
                                         </a>
                                     </li>
@@ -64,21 +64,21 @@
 
                             <div class="col-xxl-4 d-flex align-items-center justify-content-end header-with-search">
                                 <div class="header-search">
-                                    <form action="/search" method="get">
+                                    <form action="/search" method="get" class="d-flex align-items-center">
                                         <input type="search" name="q" id="searchInput" placeholder="Enter your keywords">
                                         <button type="submit" class="search-button">
-                                            <i class="fa-solid fa-magnifying-glass header-icon text-primary"></i>
+                                            <i class="fa-solid fa-magnifying-glass header-icon search-button-icon" style="line-height: 36px;"></i>
                                         </button>
                                     </form>
                                 </div>
                                 <div class="header-cart">
                                     <a href="#" class="header-link">
-                                        <i class="fa-solid fa-bag-shopping header-icon ms-3 text-primary"></i>
+                                        <i class="fa-solid fa-bag-shopping header-icon ms-3"></i>
                                     </a>
                                 </div>
                                 <div class="header-user">
                                     <a href="#" class="header-link">
-                                        <i class="fa-regular fa-user header-icon ms-5 text-primary"></i>
+                                        <i class="fa-regular fa-user header-icon ms-5"></i>
                                     </a>
                                 </div>
                             </div>
@@ -92,12 +92,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="slider-banner d-flex align-items-center justify-content-center">
-                        <picture>
+                        <picture style="height: inherit; width: 100%;">
                             <source media="(min-width:768px)" srcset="images/slideshow-banner.webp">
-                            <img src="./images/slideshow-banner-mobile-only.webp" alt="banner" style="width:auto;">
+                            <img src="./images/slideshow-banner-mobile-only.webp" alt="banner" style="height: inherit; width: inherit;">
                         </picture>
                         <div class="slider-background"></div>
-                        <div class="slider-content text-center">
+                        <div class="slider-content text-center text-sm-start">
                             <div class="slide-1">
                                 <p class="slide-sub-heading">
                                     Fresh & Organically Grown
@@ -123,7 +123,7 @@
 
         
 
-        <!-- <section id="support">
+        <section id="support">
             <div class="support-wrapper">
                 <div class="container">
                     <div class="row">
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         <script src="js" type="module"></script>
     </body>
 </html>

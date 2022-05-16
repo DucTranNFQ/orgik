@@ -8,9 +8,56 @@ body {
     height: 2000px;
 }
 
+
+
 .text-center {
     text-align: center!important;
     justify-content: center!important;
+}
+
+.text {
+    @each $key, $value in $grid-breakpoints {
+        @if $key == "xs" {
+            &-center {
+                @include media-query($key) {
+                    text-align: center!important;
+                    justify-content: center!important;
+                }
+            }
+            &-start {
+                @include media-query($key) {
+                    text-align: start!important;
+                    justify-content: start!important;
+                }
+            }
+            &-end {
+                @include media-query($key) {
+                    text-align: end!important;
+                    justify-content: end!important;
+                }
+            }
+        }
+        @else {
+            &-#{$key}-center {
+                @include media-query($key) {
+                    text-align: center!important;
+                    justify-content: center!important;
+                }
+            }
+            &-#{$key}-end {
+                @include media-query($key) {
+                    text-align: end!important;
+                    justify-content: end!important;
+                }
+            }
+            &-#{$key}-start {
+                @include media-query($key) {
+                    text-align: start!important;
+                    justify-content: start!important;
+                }
+            }
+        }
+    }
 }
 
 .text-primary {
