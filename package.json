@@ -30,6 +30,8 @@
   "bugs": {
     "url": "https://github.com/DucTranNFQ/orgik/issues"
   },
-  "homepage": "https://github.com/DucTranNFQ/orgik#readme"
-  
+  "homepage": "https://github.com/DucTranNFQ/orgik#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
 }
