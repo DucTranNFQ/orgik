@@ -20,13 +20,12 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 100vh;
+    color: #ffffff;
+    transition: all 0.25s ease-in-out;
     
     &:hover {
         background-color: #fee4d7;
-
-        & svg {
-            color: $primary-color;
-        }
+        color: $primary-color;
     }
 }
 
@@ -62,6 +61,7 @@ body {
             background-color: transparent;
             font-size: 1.2rem;
             cursor: pointer;
+            transition: all .25s ease-in-out;
 
             @include media-query("lg") {
                 display: none;
@@ -77,6 +77,7 @@ body {
             display: block;
             padding: 15px 14px;        
             color: $body-text;
+            transition: all .25s ease-in-out;
 
             &:hover {
                 color: $primary-color;
@@ -122,6 +123,8 @@ body {
                 background-color: transparent;
                 width: 36px;
                 height: 36px;
+                transition: all .25s ease-in-out;
+
                 
                 &-icon {
                     @include media-query("xl") { 
@@ -146,9 +149,9 @@ body {
 
 
         .header-link {
-
             padding: 10px;
-            &:hover>i {
+     
+            &:hover i {
                 color: #451d1d;
             }
         }
@@ -242,9 +245,11 @@ body {
                     color: white;
                     padding: 16px 20px;
                     border-radius: 50px;
+                    transition: all .25s ease-in-out;
 
                     &:hover {
                         background-color: #fee4d7;
+                        color: $primary-color;
                     }
                 }
             }
@@ -264,6 +269,16 @@ body {
             text-align: center;
             align-items: center;
             margin-bottom: 20px;
+            position: relative;
+            top: 0;
+            transition: all .25s ease-in-out;
+
+            &:hover {
+                top: -20px;
+                .image-wrapper::before {
+                    background-color: #fee4d7!important;
+                }
+            }
 
             .card-image {
                 width: 150px;
@@ -289,6 +304,7 @@ body {
                         position: absolute;
                         top: calc(100% - 10px);
                         left: calc(100% - 10px);
+                        font-size: 20px;
                     }
                 }
             }
@@ -341,7 +357,7 @@ body {
         align-items: center;
         user-select: none;
 
-        @include media-query("lg") {
+        @include media-query("sm") {
             justify-content: flex-end;
         }
 
