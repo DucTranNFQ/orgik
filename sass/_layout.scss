@@ -542,3 +542,61 @@ body {
         color: #ffffff;
     }
 }
+
+#product-carousel-section {
+    
+}
+
+.product-carousel {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 90px;
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    &__text {
+        margin-bottom: 50px;
+    }
+
+    &-card {
+        text-align: start;
+        &__img {
+            border-radius: 16px;
+        }
+
+        &__card__button-group {
+            position: absolute;
+            
+        }
+
+        &__link {
+            text-decoration: none;
+            color: $body-text;
+            transition: color .25s ease-in-out;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    
+        &__title {
+            font-size: 1.1rem;
+            margin-top: 16px;
+            margin-bottom: 10px;
+        }
+    
+        &__text {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        &:hover {
+            &__img-wrapper{
+                background-color: red;
+            }
+        }
+    }
+}
