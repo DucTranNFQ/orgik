@@ -46,10 +46,90 @@ body {
     @include media-query("md") {
         margin: 0 30px;
     }
+    
 
     .header-menu {
         list-style-type: none;
         display: none;
+
+        .dropdown-menu, .dropdown-sub-menu {
+            list-style-type: none;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            left: -30%;
+            gap: 20px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+
+            &-item {
+                width: 300px;
+            }
+        }
+
+        .dropdown-menu-page {
+            flex-direction: column;
+            left: 0;
+            gap: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+
+            .dropdown-menu-item {
+                width: 200px;
+            } 
+
+
+            .dropdown-menu-link {
+                display: block;
+                text-decoration: none;
+                color: $body-color;
+                padding: 8px 16px;
+                width: 100%;
+                border-top: 1px solid rgb(238, 238, 238);
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .hover-dropdown {
+            position: relative;
+            &:hover .dropdown-menu {
+                display: flex;
+                animation: fadeInDown 0.5s ease-in-out;
+            }
+        }
+
+        .dropdown-sub-menu {
+
+            &-link {
+                text-decoration: none;
+                color: $body-text;
+                font-size: 14px;
+                padding: 3px 0;
+                width: 100%;
+                transition: color 0.25s ease-in-out;
+            }
+
+            &-link:hover {
+                color: $primary-color;
+            }
+
+            &-title {
+                font-size: 18px;
+                margin: 0;
+                margin-bottom: 4px;
+                padding: 8px 0;
+                border-bottom: 1px solid rgb(231, 231, 231);
+            }
+        }
 
         .active {
             color: $primary-color;
@@ -361,6 +441,12 @@ body {
             justify-content: flex-end;
         }
 
+        &-inner {
+            @include media-query("lg") {
+                width: 240px;
+            }
+        }
+
         &::before { 
             content: "";
             position: absolute;
@@ -393,7 +479,27 @@ body {
         text-decoration: none;
         font-size: 1rem;
         color: $body-text;
-        padding: 13px 0 10 0;
-        border-bottom: 2px solid $body-text;
+        padding: 13px 0 10px 0;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 50%;
+            background-color: $body-color;
+            transition: all 0.25s ease-in-out;
+        }
+
+        &:hover{
+            color: $primary-color;
+        }
+        
+        &:hover::after {
+            background-color: $primary-color;
+            width: 100%;
+        }
     }
 }
