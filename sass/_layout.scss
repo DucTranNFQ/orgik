@@ -90,7 +90,7 @@ body {
             box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 
             &-item {
-                width: 200px;
+                width: 15vw;
             }
         }
 
@@ -106,7 +106,6 @@ body {
             .dropdown-menu-item {
                 width: 200px;
             } 
-
 
             .dropdown-menu-link {
                 display: block;
@@ -178,7 +177,7 @@ body {
             text-decoration: none;
             font-size: 1rem;
             display: block;
-            padding: 15px 14px;        
+            padding: 15px 10px;        
             color: $body-text;
             transition: all .25s ease-in-out;
 
@@ -237,7 +236,7 @@ body {
 
                 &:hover {
                     &>i {
-                        color: #451d1d!important;
+                        color: $secondary-color!important;
                     }
                     @include media-query("xl") {
                         background-color: $primary-color;
@@ -255,7 +254,7 @@ body {
             padding: 10px;
      
             &:hover i {
-                color: #451d1d;
+                color: $secondary-color;
             }
         }
 
@@ -563,13 +562,63 @@ body {
 
     &-card {
         text-align: start;
+
+        &__img-wrapper {
+            position: relative;
+            display: block;
+            overflow: hidden;
+
+            &:hover &-over-lay {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                border-radius: 16px;
+                background-color: #fee4d74d;
+            }
+        }
+
+        &__img-wrapper:hover &__button-group {
+            display: flex;
+            opacity: 1;
+            transform: translateY(-50%);
+        }
+
         &__img {
             border-radius: 16px;
         }
 
-        &__card__button-group {
+        &__button-group {
+            height: 50px;
+            width: 100%;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
             position: absolute;
-            
+            bottom: 0;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.25s ease-in-out;
+            display: flex;
+        }
+
+        &__button {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $primary-color;
+            color: $white-color;
+
+            svg {
+                fill: currentColor;
+            }
         }
 
         &__link {
@@ -593,10 +642,5 @@ body {
             font-weight: 500;
         }
 
-        &:hover {
-            &__img-wrapper{
-                background-color: red;
-            }
-        }
     }
 }

@@ -15,3 +15,11 @@ document.addEventListener("scroll", () => {
     }
     
 })
+
+document.getElementById("searchInput").addEventListener("focusin", function() {
+    document.querySelector(".header-search").style.borderColor = "#5da88a";
+});
+
+document.getElementById("searchInput").addEventListener("focusout", function() {
+    document.querySelector(".header-search").style.borderColor = "#e2e2e2";
+});
