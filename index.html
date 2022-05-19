@@ -5,16 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Orgik Shopify</title>
+		<!-- Google font Josefin Sans -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
             rel="stylesheet"
         />
+		<!-- Font awesome -->
         <script
             src="https://kit.fontawesome.com/98b8be3974.js"
             crossorigin="anonymous"
         ></script>
+		<!-- My style -->
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
@@ -1817,33 +1820,85 @@
         </section>
 
         <section id="carousel-section">
-            <div class="carousel">
-                <div class="carousel__content">
-                    <h2 class="carousel__title">What Our Customers Say</h2>
-                    <p class="carousel__text">
-                        Urna et pharetra pharetra massa massa ultricies mi. Cras
-                        fermentum odio eu feugiat pretium. Pellentesque massa
-                        placerat duis ultric lectus
-                    </p>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="carousel-item__avatar">
-                            <img class="carousel-item__avatar-img"></img>
-                        </div>
-                        <h4 class="carousel-item__title">Amy Amrou</h4>
-                        <h5 class="crousel-item__subtitle">Manager</h5>
-                        <p class="carousel-item__text">
-                            Fermentum dui faucibus in consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.
-                        </p>
-                    </div>
-                </div>
-                <div class="carousel-prev"></div>
-                <div class="carousel-next"></div>
-            </div>
+			<div class="container">
+
+				<div class="carousel carousel__wrapper">
+					<div class="carousel__content">
+						<h2 class="carousel__title">What Our Customers Say</h2>
+						<p class="carousel__text">
+							Urna et pharetra pharetra massa massa ultricies mi. Cras
+							fermentum odio eu feugiat pretium. Pellentesque massa
+							placerat duis ultric lectus
+						</p>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item card">
+							<div class="card-inner">
+								<div class="carousel-item__avatar">
+									<img class="carousel-item__avatar-img" src="./images/carousel_image_01_200x200.webp"></img>
+								</div>
+								<div class="carousel-item__content">
+									<h4 class="carousel-item__title">Amy Amrou</h4>
+									<h5 class="carousel-item__subtitle">Manager</h5>
+									<p class="carousel-item__text">
+										Fermentum dui faucibus in consectetur adipiscing
+										elit, sed do eiusmod tempor incididunt ut labore et
+										dolore magna aliqua.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item card active">
+							<div class="card-inner">
+								<div class="carousel-item__avatar">
+									<img class="carousel-item__avatar-img" src="./images/carousel_image_02_200x200.webp"></img>
+								</div>
+								<div class="carousel-item__content">
+									<h4 class="carousel-item__title">Amy Amrou</h4>
+									<h5 class="carousel-item__subtitle">Manager</h5>
+									<p class="carousel-item__text">
+										Fermentum dui faucibus in consectetur adipiscing
+										elit, sed do eiusmod tempor incididunt ut labore et
+										dolore magna aliqua.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item card">
+							<div class="card-inner">
+								<div class="carousel-item__avatar">
+									<img class="carousel-item__avatar-img" src="./images/carousel_image_03_200x200.webp"></img>
+								</div>
+								<div class="carousel-item__content">
+									<h4 class="carousel-item__title">Amy Amrou</h4>
+									<h5 class="carousel-item__subtitle">Manager</h5>
+									<p class="carousel-item__text">
+										Fermentum dui faucibus in consectetur adipiscing
+										elit, sed do eiusmod tempor incididunt ut labore et
+										dolore magna aliqua.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="carousel__control">
+							<div class="carousel-prev">
+								<div class="carousel-prev__arrow"></div>
+							</div>
+							<div class="carousel-next">
+								<div class="carousel-next__arrow"></div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
         </section>
+
+		<!-- Script -->
+		<!----------------------------------->
+		<!-- MyScript -->
         <script src="./js/index.js"></script>
     </body>
 </html>
