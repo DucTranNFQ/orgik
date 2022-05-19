@@ -670,3 +670,138 @@ body {
         font-weight: 300;
     }
 }
+
+.discount {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 150px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    background-image: url("../images//deal_section_bg.webp");
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 5%;
+
+        .discount__content {
+            width: 30%;
+            min-width: 445px;
+            margin: unset;
+            margin-right: 90px;
+
+            .discount-sub-title {
+                margin: 0;
+                font-size: 24px;
+                font-weight: normal;
+                line-height: 1.5em;
+                margin-bottom: 3px;
+            }
+            
+            .discount-title {
+                font-size: 48px;
+                font-weight: normal;
+                margin-bottom: 3px;
+                color: #5da88a;
+            }
+
+            .discount-desc {
+                font-size: 24px;
+                margin-bottom: 30px;
+                line-height: 38px;
+            }
+
+            .countdown {
+                width: 100%;
+                display: flex;
+                gap: 30px;
+                background: none;
+                align-items: center;
+                justify-content: start;
+                list-style: none;
+
+                &__item {
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 30px;
+                    justify-content: center;
+                    flex-direction: column;
+                    border-radius: 50%;
+                    line-height: normal;
+                    background-color: white;
+                    text-align: center;
+
+                    .main-time {
+                        font-weight: 700;
+                    }
+
+                    .sub-time {
+                        width: 100%;
+                        font-size: 14px;
+                    }
+
+                    &::after {
+                        content: ":";
+                        position: absolute;
+                        right: -18px;
+                        font-size: 40px;
+                        color: #a5a199;
+                    }
+                }
+
+                &__item:last-of-type {
+                    &::after {
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+        padding: 100px 0;
+    }
+
+    @media only screen and (max-width: 992px) {
+        background-position: 40%, 20%;
+
+        &__wrapper {
+            .discount__content {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        &__wrapper {
+            .discount__content {
+                text-align: right;
+
+                .discount-title {
+                    font-size: 30px;
+                }
+
+                .countdown {
+                    justify-content: flex-end;
+                    gap: 20px;
+
+                    &__item {
+                        width: 60px;
+                        height: 60px;
+                        font-size: 25px;
+
+                        &::after {
+                            right: -14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
