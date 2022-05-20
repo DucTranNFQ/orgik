@@ -25,53 +25,53 @@ document.getElementById("searchInput").addEventListener("focusout", function() {
 });
 
 // carousel
-let slideIndex = 0;
+let currentIndex = 0;
 const carouselList = document.querySelectorAll(".carousel-item.card");
 const carouselLength = carouselList.length;
 
 function slideCarousel(number) {
-    if (slideIndex == carouselLength) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = 3;
+    if ((currentIndex + number) == carouselLength) {
+        currentIndex = 0;
+    } else if ((currentIndex + number) < 0) {
+        currentIndex = carouselLength-1;
+    } else {
+        currentIndex += number;
     }
-    showCarousel(slideIndex += number)
+    showCarousel(currentIndex)
 }
 
 function showCarousel(index) {
-    // remove previous active and display
+    console.log(index);
+
+    // Remove all previous active and display
     for (elem of carouselList) {
-        elem.classList.remove("active")
-        elem.style.display = "none"
-        elem.style.order = "0"
+        elem.classList.remove("active");
+        elem.classList.remove("d-lg-flex");
+        elem.style.order = "0";
     }
-    
-
-    console.log(index)
-
 
     // for active element
-    carouselList[index].classList.add("active")
-    carouselList[index].style.display = "flex";
+    carouselList[index].classList.add("active");
+    carouselList[index].classList.add("d-lg-flex");
     carouselList[index].style.order = "2";
 
 
     // for beside active element
     if (index == 0) {
-        carouselList[carouselLength-1].style.display = "flex";
+        carouselList[carouselLength-1].classList.add("d-lg-flex");
         carouselList[carouselLength-1].style.order = "1";
-        carouselList[index+1].style.display = "flex";
+        carouselList[index+1].classList.add("d-lg-flex");
         carouselList[index+1].style.order = "3";
     } else if (index == (carouselLength-1)) {
-        carouselList[0].style.display = "flex";
+        carouselList[0].classList.add("d-lg-flex");
         carouselList[0].style.order = "3";
-        carouselList[index-1].style.display = "flex";
+        carouselList[index-1].classList.add("d-lg-flex");
         carouselList[index-1].style.order = "1";
     } else {
-        carouselList[index-1].style.display = "flex";
+        carouselList[index-1].classList.add("d-lg-flex");
         carouselList[index-1].style.order = "1";
-        carouselList[index+1].style.display = "flex";
+        carouselList[index+1].classList.add("d-lg-flex");
         carouselList[index+1].style.order = "3";
     }
 };
-showCarousel(slideIndex);
+showCarousel(currentIndex);

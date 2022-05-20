@@ -747,6 +747,7 @@ body {
         display: flex;
         transform: scale(100%);
         opacity: 1;
+        transition: transform .5s ease-in-out;
         .carousel-item__avatar {
             &::before, &::after {
                 content: "";
