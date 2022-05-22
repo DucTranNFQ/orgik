@@ -1175,3 +1175,21 @@ body {
     padding-top: 90px;
     padding-bottom: 30px;
 }
+
+.brand-logos {
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__link &__img {
+        transition: all .25s ease-in-out;
+        filter: grayscale(0);
+    }
+
+    &__link:hover &__img {
+        filter: grayscale(1);
+    }
+}
