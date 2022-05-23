@@ -229,6 +229,7 @@ body {
 
                 
                 &-icon {
+                    color: $primary-color;
                     @include media-query("xl") { 
                         font-size: 1rem;
                     }
@@ -249,19 +250,45 @@ body {
             }
         }
 
-
         .header-link {
             padding: 10px;
-     
-            &:hover i {
+            margin-left: 10px;
+            color: $primary-color;
+            transition: color .25s ease-in-out;
+
+            &:hover {
+                transition: color .25s ease-in-out;
                 color: $secondary-color;
+            }
+
+            &:hover::after {
+                transition: color .25s ease-in-out;
+                background-color: $secondary-color;
             }
         }
 
         .header-icon {
-            color: $primary-color;
+            height: 25px;
+            width: 32px;
             font-size: 1.4rem;
         }
+
+        .header-cart {
+            position: relative;
+            &::after {
+                content: "1";
+                position: absolute;
+                bottom: 16px;
+                right: 4px;
+                height: 20px;
+                width: 20px;
+                text-align: center;
+                color: $white-color;
+                background-color: $primary-color;
+                border-radius: 50%;
+            }    
+        }
+
     }
 }
 
@@ -378,8 +405,9 @@ body {
             transition: all .25s ease-in-out;
 
             &:hover {
-                top: -20px;
+                top: -30px;
                 .image-wrapper::before {
+                    transition: all .25s ease-in-out;
                     background-color: #fee4d7!important;
                 }
             }
@@ -409,6 +437,7 @@ body {
                         top: calc(100% - 10px);
                         left: calc(100% - 10px);
                         font-size: 20px;
+                        transition: all .25s ease-in-out;
                     }
                 }
             }
@@ -505,6 +534,7 @@ body {
         color: $body-text;
         padding: 13px 0 10px 0;
         position: relative;
+        transition: all 0.25s ease-in-out;
 
         &::after {
             content: "";
@@ -593,8 +623,8 @@ body {
             align-items: center;
             position: absolute;
             bottom: 0;
-            transform: translateY(100%);
             opacity: 0;
+            transform: translateY(100%);
             transition: all 0.25s ease-in-out;
             display: flex;
         }
@@ -611,6 +641,12 @@ body {
             border-radius: 50%;
             background-color: $primary-color;
             color: $white-color;
+            transition: all .25s ease-in-out;
+
+            &:hover {
+                background-color: #fee4d7;
+                color: $primary-color;
+            }
 
             svg {
                 fill: currentColor;
@@ -728,6 +764,7 @@ body {
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-image: url(//cdn.shopify.com/s/files/1/0566/8981/9857/t/6/assets/custom_arrow.png?v=1221131…);
         background-color: $primary-color;
+        transition: all .25s ease-in-out;
 
         &:hover {
             background-color: $body-text;
@@ -1177,6 +1214,7 @@ body {
 }
 
 .brand-logos {
+    row-gap: 16px;
     &__link {
         display: flex;
         align-items: center;
@@ -1192,6 +1230,7 @@ body {
         filter: grayscale(1);
     }
 }
+
 
 
 // Footer section
@@ -1217,7 +1256,7 @@ body {
             width: 100%;
             height: 196px;
             background-image: url("../images/footer_bg_after.webp");
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
         }
     }
