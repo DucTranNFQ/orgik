@@ -1173,11 +1173,10 @@ body {
 // Brand logos section
 #brand-logos-section {
     padding-top: 90px;
-    padding-bottom: 30px;
+    padding-bottom: 70px;
 }
 
 .brand-logos {
-
     &__link {
         display: flex;
         align-items: center;
@@ -1191,5 +1190,157 @@ body {
 
     &__link:hover &__img {
         filter: grayscale(1);
+    }
+}
+
+
+// Footer section
+
+#footer-section {
+    position: relative;
+} 
+
+.footer-wrapper {
+    @include media-query("sm") {
+        padding: 0px 30px 30px;
+    }
+}
+
+.footer {
+    position: relative;
+    &::before {
+        @include media-query("sm") {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 196px;
+            background-image: url("../images/footer_bg_after.webp");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.footer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url("../images/footer_bg.webp");
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    background-color: $primary-color;
+    opacity: 0.9;
+    z-index: -1;
+    @include media-query("sm") {
+        border-radius: 90px;
+    }
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: $white-color;
+    color: $primary-color;
+    border-radius: 50%;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.icon-social:hover {
+    background-color: $primary-color;
+    color: #fee4d7;
+}
+
+.icon {
+    height: 16px;
+}
+
+
+
+.footer {
+    padding: 150px 30px 0px;
+    
+    &__img-wrapper {
+        justify-content: center;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        @include media-query("lg") {
+            justify-content: center;
+        }
+    }
+
+    &__item-phone {
+        @include media-query("xl") {
+            width: 26%;
+        }
+    }
+
+
+    @media screen and (max-width: 1200px) {
+        &__item-open-hours {
+            order: 1;
+        }
+    }
+
+    &__text {
+        color: $white-color;
+        font-size: 16px;
+        font-weight: 400;
+        flex-shrink: 9999;
+    }
+
+    &__phone {
+        @include media-query("xl") {
+            font-size: 30px;
+        }
+    }
+
+    &__social {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+}
+
+
+.footer-menu {
+    display: block;
+    list-style-type: none;
+
+    &__title {
+        font-size: 18px;
+        font-weight: 400;
+        color: $white-color;
+        margin: 0;
+        margin-bottom: 12px;
+    }
+
+    &__item {   
+        margin-bottom: 5px;
+    }
+    
+    &__link {
+        text-decoration: none;
+        color: $white-color;
+        line-height: 32px;
+        display: block;
+    }
+
+    &__text {
+        color: $white-color;
+        line-height: 32px;
+        display: block;
+        font-size: 14px;
     }
 }
