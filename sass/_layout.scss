@@ -51,7 +51,8 @@ body {
     border-radius: 100vh;
     color: #ffffff;
     transition: all 0.25s ease-in-out;
-    
+    cursor: pointer;
+
     &:hover {
         background-color: #fee4d7;
         color: $primary-color;
@@ -72,6 +73,18 @@ body {
         top: 0;
     }
 }
+
+
+.header-logo img {
+    width: 100px;
+    @include media-query(375px) {
+        width: 110px;
+    }
+    @include media-query("sm") {
+        width: 140px;
+    }
+}
+
 .header-sticky {
     position: fixed!important;
     width: 100vw;
@@ -90,6 +103,7 @@ body {
         width: 90px;
     }
 }
+
 
 .header-section {
     padding-top: 15px;

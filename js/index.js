@@ -1,25 +1,29 @@
+const toTop = document.getElementById("to-top");
+toTop.addEventListener("click", function() {
+    window.scrollTo(0, 0)
+})
 // to top
 document.addEventListener("scroll", () => {
-
+    
     //header sticky
     if (window.scrollY > 20) {
         document.getElementById("header").classList.add("header-sticky");
     } else {
         document.getElementById("header").classList.remove("header-sticky");
     }
-
-    if (window.scrollY > 850) {
-        document.getElementById("to-top").style.display = "flex";
-    } else {
-        document.getElementById("to-top").style.display = "none";
-    }
     
-})
-
-document.getElementById("searchInput").addEventListener("focusin", function() {
-    document.querySelector(".header-search").style.borderColor = "#5da88a";
-});
-
+    if (window.scrollY > 850) {
+        toTop.style.display = "flex";
+    } else {
+        toTop.style.display = "none";
+    }
+        
+    })
+    
+    document.getElementById("searchInput").addEventListener("focusin", function() {
+        document.querySelector(".header-search").style.borderColor = "#5da88a";
+    });
+    
 document.getElementById("searchInput").addEventListener("focusout", function() {
     document.querySelector(".header-search").style.borderColor = "#e2e2e2";
 });
@@ -41,7 +45,6 @@ function slideCarousel(number) {
 }
 
 function showCarousel(index) {
-    console.log(index);
 
     // Remove all previous active and display
     for (elem of carouselList) {
