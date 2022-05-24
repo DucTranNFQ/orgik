@@ -75,3 +75,9 @@ function showCarousel(index) {
     }
 };
 showCarousel(currentIndex);
+
+window.addEventListener("load", function() {
+    const timeOut = setTimeout(() => {
+        document.querySelector("#preloader").style.display = "none";
+    }, 500)
+})
